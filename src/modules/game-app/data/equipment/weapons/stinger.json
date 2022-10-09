@@ -1,5 +1,5 @@
 {
-  "name": "Espada Curta",
+  "name": "Ferrão",
   "damage": {
     "min": 15,
     "max": 25
@@ -7,9 +7,12 @@
   "atkRange": 1,
   "weight": 1,
   "quickness": 20,
-  "slot": ["MAIN_HAND"],
+  "slot": [
+    "MAIN_HAND"
+  ],
   "penetration": 15,
   "armorShred": 0,
   "strScale": 0.5,
-  "dexScale": 0.5
+  "dexScale": 0.5,
+  "price": 200
 }

@@ -1,8 +1,8 @@
-import Peasant from "../../data/backgrounds/peasant.json";
-import Noble from "../../data/backgrounds/noble.json";
-import Swordsman from "../../data/backgrounds/swordsman.json";
-import Hunter from "../../data/backgrounds/hunter.json";
-import Barbarian from "../../data/backgrounds/barbarian.json";
-import Thief from "../../data/backgrounds/thief.json";
+import BountyHunter from "../../data/backgrounds/bountyHunter.json";
+import Mecha from "../../data/backgrounds/mecha.json";
+import Recruit from "../../data/backgrounds/recruit.json";
+import Saboteur from "../../data/backgrounds/saboteur.json";
+import Soldier from "../../data/backgrounds/soldier.json";
+import Specialist from "../../data/backgrounds/specialist.json";
 
-export default { Peasant, Noble, Swordsman, Hunter, Barbarian, Thief };
+export default { BountyHunter, Mecha, Recruit, Saboteur, Soldier, Specialist };

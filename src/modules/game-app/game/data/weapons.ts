@@ -1,17 +1,19 @@
-import Shortsword from "../../data/equipment/weapons/shortsword.json";
-import Longsword from "../../data/equipment/weapons/longsword.json";
-import Shortbow from "../../data/equipment/weapons/shortbow.json";
-import Dagger from "../../data/equipment/weapons/dagger.json";
-import Greatsword from "../../data/equipment/weapons/greatsword.json";
-import GreatAxe from "../../data/equipment/weapons/greatAxe.json";
-import Longbow from "../../data/equipment/weapons/longbow.json";
+import Conqueror from "../../data/equipment/weapons/conqueror.json";
+import HalleyBow from "../../data/equipment/weapons/halleyBow.json";
+import Lightsaber from "../../data/equipment/weapons/lightsaber.json";
+import LunarAxe from "../../data/equipment/weapons/lunarAxe.json";
+import Pistol from "../../data/equipment/weapons/pistol.json";
+import QuasarAxe from "../../data/equipment/weapons/quasarAxe.json";
+import SpectralDagger from "../../data/equipment/weapons/spectralDagger.json";
+import Stinger from "../../data/equipment/weapons/stinger.json";
 
 export default {
-  Shortsword,
-  Longsword,
-  Shortbow,
-  Longbow,
-  Greatsword,
-  Dagger,
-  GreatAxe,
+  Conqueror,
+  HalleyBow,
+  Lightsaber,
+  SpectralDagger,
+  Pistol,
+  LunarAxe,
+  QuasarAxe,
+  Stinger,
 };

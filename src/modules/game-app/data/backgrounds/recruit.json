@@ -3,5 +3,6 @@
   "str": 3,
   "dex": 1,
   "hp": 120,
-  "quickness": 0
+  "quickness": 0,
+  "price": 100
 }

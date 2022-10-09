@@ -7,9 +7,12 @@
   "atkRange": 3,
   "weight": 0.8,
   "quickness": 25,
-  "slot": ["TWO_HANDED"],
+  "slot": [
+    "TWO_HANDED"
+  ],
   "penetration": 0,
   "armorShred": 0,
   "strScale": 0,
-  "dexScale": 1
+  "dexScale": 1,
+  "price": 200
 }

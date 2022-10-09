@@ -5,5 +5,6 @@
   "quickness": 0,
   "slot": "CHEST",
   "str": 0,
-  "dex": 2
+  "dex": 2,
+  "price": 80
 }

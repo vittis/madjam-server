@@ -16,9 +16,9 @@ export class Game {
     this.boardManager = new BoardManager(7, 5);
 
     const heavyNobleSwordsman = new Unit("P1", 0, 0, {
-      backgrounds: [Backgrounds.Noble, Backgrounds.Swordsman],
+      backgrounds: [Backgrounds.Mecha],
       equipment: {
-        mainHandWeapon: Weapons.Longsword as WeaponData,
+        mainHandWeapon: Weapons.Conqueror as WeaponData,
         head: Heads.TechHelmet as ArmorData,
         chest: Chests.PlateArmor as ArmorData,
       },
@@ -26,9 +26,9 @@ export class Game {
     });
 
     const lightNobleSwordsman = new Unit("P2", 1, 1, {
-      backgrounds: [Backgrounds.Noble, Backgrounds.Swordsman],
+      backgrounds: [Backgrounds.Saboteur],
       equipment: {
-        mainHandWeapon: Weapons.Longsword as WeaponData,
+        mainHandWeapon: Weapons.Stinger as WeaponData,
         head: Heads.TechHelmet as ArmorData,
         chest: Chests.StandardArmor as ArmorData,
       },
@@ -36,19 +36,19 @@ export class Game {
     });
 
     const lightNobleHunter = new Unit("P1", 1, 2, {
-      backgrounds: [Backgrounds.Noble, Backgrounds.Hunter],
+      backgrounds: [Backgrounds.BountyHunter],
       equipment: {
-        mainHandWeapon: Weapons.Longbow as WeaponData,
+        mainHandWeapon: Weapons.SpectralDagger as WeaponData,
         head: Heads.BrokenHelmet as ArmorData,
         chest: Chests.BasicArmor as ArmorData,
       },
-      playstyle: PLAYSTYLE.PASSIVE,
+      playstyle: PLAYSTYLE.AGGRESSIVE,
     });
 
     const mediumNobleHunter = new Unit("P2", 0, 4, {
-      backgrounds: [Backgrounds.Noble, Backgrounds.Hunter],
+      backgrounds: [Backgrounds.Specialist],
       equipment: {
-        mainHandWeapon: Weapons.Longbow as WeaponData,
+        mainHandWeapon: Weapons.HalleyBow as WeaponData,
         head: Heads.StandardHelmet as ArmorData,
         chest: Chests.StandardArmor as ArmorData,
       },
@@ -56,19 +56,19 @@ export class Game {
     });
 
     const lightPeasantHunter = new Unit("P1", 4, 4, {
-      backgrounds: [Backgrounds.Noble, Backgrounds.Hunter],
+      backgrounds: [Backgrounds.Specialist],
       equipment: {
-        mainHandWeapon: Weapons.Dagger as WeaponData,
+        mainHandWeapon: Weapons.Pistol as WeaponData,
         head: Heads.BrokenHelmet as ArmorData,
         chest: Chests.StandardArmor as ArmorData,
       },
-      playstyle: PLAYSTYLE.AGGRESSIVE,
+      playstyle: PLAYSTYLE.PASSIVE,
     });
 
     const heavyPeasant = new Unit("P2", 0, 3, {
-      backgrounds: [Backgrounds.Peasant, Backgrounds.Swordsman],
+      backgrounds: [Backgrounds.Soldier],
       equipment: {
-        mainHandWeapon: Weapons.Greatsword as WeaponData,
+        mainHandWeapon: Weapons.Lightsaber as WeaponData,
         head: Heads.TechHelmet as ArmorData,
         chest: Chests.PlateArmor as ArmorData,
       },
