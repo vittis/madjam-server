@@ -188,11 +188,9 @@ export class Unit extends Entity {
       this.currentAction = null;
     }
 
-    /* if (!this.currentAction) {
+    if (!this.currentAction) {
       this.currentAction = this.brain.chooseAction(bm, this);
-    } */
-
-    this.currentAction = this.brain.chooseAction(bm, this);
+    }
 
     if (this.currentAction && this.canAct()) {
       this.currentAction?.execute(this);
