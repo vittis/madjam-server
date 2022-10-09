@@ -133,7 +133,7 @@ export class Unit extends Entity {
 
     const totalQuickness =
       backgrounds.reduce((acc, current) => acc + current.quickness, 0) +
-      mainHandWeapon.quickness +
+      (mainHandWeapon?.quickness || 0) +
       quicknessFromArmorTypeBonus;
 
     this.stats = {

@@ -17,6 +17,7 @@ const mapWeapons = {
   Pistola: "Pistol",
   "Machado Quasar": "QuasarAxe",
   Ferrão: "Stinger",
+  'Adaga Espectral': 'SpectralDagger'
 };
 
 const mapHelmet = {
