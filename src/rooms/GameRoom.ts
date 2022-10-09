@@ -4,6 +4,7 @@ import { GameState, Player } from "./schema/GameState";
 import AllData from '../modules/game-app/game/data'
 export class GameRoom extends Room<GameState> {
   history: any;
+  winner: any;
   teamOne: any = {};
   teamTwo: any = {};
 
@@ -14,7 +15,7 @@ export class GameRoom extends Room<GameState> {
 
 
     this.onMessage('askHistory', (client, message) => {
-      client.send('sendHistory', { history: this.history });
+      client.send('sendHistory', { history: this.history, winner: this.winner });
     });
 
     this.onMessage('askData', (client, message) => {
@@ -42,6 +43,7 @@ export class GameRoom extends Room<GameState> {
         const game = new Game(this.teamOne, this.teamTwo);
         game.startGame();
         this.history = game.history;
+        this.winner = game.getWinner();
         /* {
           v4LDXlMuo: [
             {

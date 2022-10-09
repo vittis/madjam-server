@@ -79,7 +79,7 @@ export class Game {
     });
 
     teamTwo.squad.forEach((unit: any, i: number) => {
-      const unitToAdd = new Unit("P2", 7, i, {
+      const unitToAdd = new Unit("P2", 7, 4 - i, {
         // @ts-ignore
         backgrounds: [Backgrounds[mapBackground[unit.background]]],
         equipment: {
@@ -233,6 +233,14 @@ export class Game {
       },
     ]);
     console.timeEnd("loop");
+  }
+
+  getWinner() {
+    let winner = "P1";
+    this.boardManager.getAllUnits().forEach(unit => {
+      winner = unit.owner;
+    })
+    return winner;
   }
 
   hasGameEnded() {
