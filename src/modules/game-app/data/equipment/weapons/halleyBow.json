@@ -4,15 +4,13 @@
     "min": 15,
     "max": 25
   },
-  "atkRange": 3,
+  "atkRange": 4,
   "weight": 2,
   "quickness": -5,
-  "slot": [
-    "TWO_HANDED"
-  ],
+  "slot": ["TWO_HANDED"],
   "penetration": 15,
   "armorShred": 0,
   "strScale": 1,
-  "dexScale": 2,
+  "dexScale": 3,
   "price": 400
 }
