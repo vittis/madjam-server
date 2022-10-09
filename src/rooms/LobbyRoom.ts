@@ -52,7 +52,8 @@ export class LobbyRoom extends Room<LobbyState> {
   }
 
   onJoin(client: Client, options: any) {
-    console.log(client.sessionId, "joined!");
+    //console.log(client.sessionId, "joined!");
+
     this.state.players.set(client.sessionId, new Player());
   }
 

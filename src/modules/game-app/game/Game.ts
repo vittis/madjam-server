@@ -8,14 +8,95 @@ import Heads from "./data/heads";
 import { ArmorData } from "./Armor";
 import { PLAYSTYLE } from "./Brain";
 
+
+const mapWeapons = {
+  Conquistadora: "Conqueror",
+  "Arco de Halley": "HalleyBow",
+  "Sabre de Luz": "Lightsaber",
+  "Machado Lunar": "LunarAxe",
+  Pistola: "Pistol",
+  "Machado Quasar": "QuasarAxe",
+  Ferrão: "Stinger",
+};
+
+const mapHelmet = {
+  "Capacete Quebrado": "BrokenHelmet",
+  "Capacete Padrão": "StandardHelmet",
+  "Capacete Hi-Tech": "TechHelmet",
+};
+
+const mapArmor = {
+  "Armadura Básica": "BasicArmor",
+  "Armadura Padrão": "StandardArmor",
+  "Armadura Pesada": "PlateArmor",
+};
+
+const mapBackground = {
+  Soldado: "Soldier",
+  "Caçador de Recompensas": "BountyHunter",
+  Recruta: "Recruit",
+  Sabotador: "Saboteur",
+  Especialista: "Specialist",
+  Mecha: "Mecha"
+};
+
 export class Game {
   boardManager: BoardManager;
   history: any[] = [];
 
-  constructor() {
-    this.boardManager = new BoardManager(7, 5);
+  constructor(teamOne: any, teamTwo: any) {
+    this.boardManager = new BoardManager(8, 5);
 
-    const heavyNobleSwordsman = new Unit("P1", 0, 0, {
+
+    console.log({ teamOne }); // { player: 'P1', id: 'IntKsPn4K', squad: [ [Object] ] } }
+    console.log({ teamTwo });
+    /* {
+        from: 'v4LDXlMuo',
+        background: 'Soldado',
+        weapon: undefined,
+        armor: undefined,
+        helmet: undefined
+      } */
+
+
+    teamOne.squad.forEach((unit: any, i: number) => {
+
+      const unitToAdd = new Unit("P1", 0, i, {
+        // @ts-ignore
+        backgrounds: [Backgrounds[mapBackground[unit.background]]],
+        equipment: {
+          // @ts-ignore
+          mainHandWeapon: Weapons[mapWeapons[unit.weapon]] as WeaponData,
+          // @ts-ignore
+          head: Heads[mapHelmet[unit.helmet]] as ArmorData,
+          // @ts-ignore
+          chest: Chests[mapArmor[unit.armor]] as ArmorData,
+        },
+        playstyle: PLAYSTYLE.AGGRESSIVE,
+      });
+      this.boardManager.addToBoard(unitToAdd);
+    });
+
+    teamTwo.squad.forEach((unit: any, i: number) => {
+      const unitToAdd = new Unit("P2", 7, i, {
+        // @ts-ignore
+        backgrounds: [Backgrounds[mapBackground[unit.background]]],
+        equipment: {
+          // @ts-ignore
+          mainHandWeapon: Weapons[mapWeapons[unit.weapon]] as WeaponData,
+          // @ts-ignore
+          head: Heads[mapHelmet[unit.helmet]] as ArmorData,
+          // @ts-ignore
+          chest: Chests[mapArmor[unit.armor]] as ArmorData,
+        },
+        playstyle: PLAYSTYLE.AGGRESSIVE,
+      });
+      this.boardManager.addToBoard(unitToAdd);
+    });
+
+
+
+    /* const heavyNobleSwordsman = new Unit("P1", 0, 0, {
       backgrounds: [Backgrounds.Mecha],
       equipment: {
         mainHandWeapon: Weapons.Conqueror as WeaponData,
@@ -80,7 +161,7 @@ export class Game {
     this.boardManager.addToBoard(mediumNobleHunter); // P2
     this.boardManager.addToBoard(lightNobleHunter); // P1
     this.boardManager.addToBoard(lightNobleSwordsman); // P2
-    this.boardManager.addToBoard(heavyNobleSwordsman); // P1
+    this.boardManager.addToBoard(heavyNobleSwordsman); // P1 */
   }
 
   preSerialize() {
@@ -90,6 +171,10 @@ export class Game {
   async startGame() {
     const unit1 = this.boardManager.getAllUnits()[0];
     const unit2 = this.boardManager.getAllUnits()[1];
+
+    this.boardManager.getAllUnits().forEach((unit) => {
+      console.log(unit);
+    });
 
     this.boardManager.printGrid();
 

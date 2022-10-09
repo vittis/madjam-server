@@ -121,11 +121,11 @@ export class Unit extends Entity {
     const totalStr = backgrounds.reduce((acc, current) => acc + current.str, 0);
     const totalDex = backgrounds.reduce((acc, current) => acc + current.dex, 0);
     const totalHp = backgrounds.reduce((acc, current) => acc + current.hp, 0);
-    const totalArmorHp = equipment.chest.armorHp + equipment.head.armorHp;
+    const totalArmorHp = (equipment?.chest?.armorHp || 0) + (equipment?.head?.armorHp || 0);
     const totalWeight =
-      equipment.chest.weight +
-      equipment.head.weight +
-      equipment.mainHandWeapon.weight;
+      (equipment?.chest?.weight || 0) +
+      (equipment?.head?.weight || 0) +
+      equipment?.mainHandWeapon?.weight;
 
     const armorType = this.getArmorType(totalWeight);
     const { quickness: quicknessFromArmorTypeBonus } =
@@ -146,17 +146,17 @@ export class Unit extends Entity {
       quickness: totalQuickness,
       ap: 0,
       atkRange: mainHandWeapon.atkRange,
-      /* mainHandDamage: {
-                min: Math.floor(
-                    mainHandWeapon.damage.min + totalStr * mainHandWeapon.strScale + totalDex * mainHandWeapon.dexScale
-                ),
-                max: Math.ceil(
-                    mainHandWeapon.damage.max + totalStr * mainHandWeapon.strScale + totalDex * mainHandWeapon.dexScale
-                )
-            }, */
+      mainHandDamage: {
+        min: Math.floor(
+          mainHandWeapon.damage.min + totalStr * mainHandWeapon.strScale + totalDex * mainHandWeapon.dexScale
+        ),
+        max: Math.ceil(
+          mainHandWeapon.damage.max + totalStr * mainHandWeapon.strScale + totalDex * mainHandWeapon.dexScale
+        )
+      },
       weight: totalWeight,
       armorType: armorType,
-      mainHandDamage: {
+      /* mainHandDamage: {
         min: Math.floor(
           (mainHandWeapon.damage.min + mainHandWeapon.damage.max) / 2 +
           totalStr * mainHandWeapon.strScale +
@@ -167,7 +167,7 @@ export class Unit extends Entity {
           totalStr * mainHandWeapon.strScale +
           totalDex * mainHandWeapon.dexScale
         ),
-      },
+      }, */
     };
   }
 
@@ -292,7 +292,8 @@ export class Unit extends Entity {
   }
 
   getArmorType(weight?: number) {
-    const finalWeight = weight || this.stats.weight;
+    console.log('stats', this.stats)
+    const finalWeight = weight || this.stats?.weight || 0;
     if (finalWeight <= Config.ArmorType.light.max) return ARMOR_TYPE.LIGHT;
     if (finalWeight <= Config.ArmorType.medium.max) return ARMOR_TYPE.MEDIUM;
     return ARMOR_TYPE.HEAVY;

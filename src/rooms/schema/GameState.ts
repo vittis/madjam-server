@@ -5,6 +5,8 @@ export class Player extends Schema {
   @type("string") animal: string;
 
   @type("boolean") isMatchmaking: boolean = false;
+
+  @type("boolean") setupReady: boolean = false;
 }
 
 export class GameState extends Schema {

@@ -4,14 +4,14 @@ import { GameState, Player } from "./schema/GameState";
 import AllData from '../modules/game-app/game/data'
 export class GameRoom extends Room<GameState> {
   history: any;
+  teamOne: any = {};
+  teamTwo: any = {};
 
   onCreate(options: any) {
     this.maxClients = 2;
     this.setState(new GameState());
 
-    /* const game = new Game();
-    game.startGame();
-    this.history = game.history; */
+
 
     this.onMessage('askHistory', (client, message) => {
       client.send('sendHistory', { history: this.history });
@@ -19,6 +19,50 @@ export class GameRoom extends Room<GameState> {
 
     this.onMessage('askData', (client, message) => {
       client.send('sendData', { data: AllData });
+    });
+
+    this.onMessage('confirmSelection', (client, message) => {
+      this.state.players.get(client.sessionId).setupReady = true;
+      let isReady = 0;
+      this.state.players.forEach((value, key) => {
+        if (value.setupReady) {
+          isReady++;
+        }
+      });
+      if (isReady === 1) {
+        this.teamOne = { player: "P1", id: client.sessionId, squad: message.squad };
+      } else {
+        this.teamTwo = { player: "P2", id: client.sessionId, squad: message.squad };
+      }
+      console.log({ isReady })
+      if (isReady === 2) {
+        this.broadcast("startGame");
+        console.log("PLS");
+
+        const game = new Game(this.teamOne, this.teamTwo);
+        game.startGame();
+        this.history = game.history;
+        /* {
+          v4LDXlMuo: [
+            {
+              from: 'v4LDXlMuo',
+              background: 'Soldado',
+              weapon: undefined,
+              armor: undefined,
+              helmet: undefined
+            }
+          ],
+          Obt6mC5io: [
+            {
+              from: 'Obt6mC5io',
+              background: 'Recruta',
+              weapon: undefined,
+              armor: undefined,
+              helmet: undefined
+            }
+          ]
+        } */
+      }
     });
 
   }
