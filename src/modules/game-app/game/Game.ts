@@ -19,8 +19,8 @@ export class Game {
       backgrounds: [Backgrounds.Noble, Backgrounds.Swordsman],
       equipment: {
         mainHandWeapon: Weapons.Longsword as WeaponData,
-        head: Heads.PlateHelmet as ArmorData,
-        chest: Chests.PlateMail as ArmorData,
+        head: Heads.TechHelmet as ArmorData,
+        chest: Chests.PlateArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.AGGRESSIVE,
     });
@@ -29,8 +29,8 @@ export class Game {
       backgrounds: [Backgrounds.Noble, Backgrounds.Swordsman],
       equipment: {
         mainHandWeapon: Weapons.Longsword as WeaponData,
-        head: Heads.PlateHelmet as ArmorData,
-        chest: Chests.LeatherShirt as ArmorData,
+        head: Heads.TechHelmet as ArmorData,
+        chest: Chests.StandardArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.AGGRESSIVE,
     });
@@ -39,7 +39,7 @@ export class Game {
       backgrounds: [Backgrounds.Noble, Backgrounds.Hunter],
       equipment: {
         mainHandWeapon: Weapons.Longbow as WeaponData,
-        head: Heads.ClothHat as ArmorData,
+        head: Heads.BrokenHelmet as ArmorData,
         chest: Chests.BasicArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.PASSIVE,
@@ -49,8 +49,8 @@ export class Game {
       backgrounds: [Backgrounds.Noble, Backgrounds.Hunter],
       equipment: {
         mainHandWeapon: Weapons.Longbow as WeaponData,
-        head: Heads.LeatherHat as ArmorData,
-        chest: Chests.LeatherShirt as ArmorData,
+        head: Heads.StandardHelmet as ArmorData,
+        chest: Chests.StandardArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.PASSIVE,
     });
@@ -59,8 +59,8 @@ export class Game {
       backgrounds: [Backgrounds.Noble, Backgrounds.Hunter],
       equipment: {
         mainHandWeapon: Weapons.Dagger as WeaponData,
-        head: Heads.ClothHat as ArmorData,
-        chest: Chests.LeatherShirt as ArmorData,
+        head: Heads.BrokenHelmet as ArmorData,
+        chest: Chests.StandardArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.AGGRESSIVE,
     });
@@ -69,8 +69,8 @@ export class Game {
       backgrounds: [Backgrounds.Peasant, Backgrounds.Swordsman],
       equipment: {
         mainHandWeapon: Weapons.Greatsword as WeaponData,
-        head: Heads.PlateHelmet as ArmorData,
-        chest: Chests.PlateMail as ArmorData,
+        head: Heads.TechHelmet as ArmorData,
+        chest: Chests.PlateArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.AGGRESSIVE,
     });
