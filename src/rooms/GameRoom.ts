@@ -1,7 +1,9 @@
 import { Room, Client } from "colyseus";
 import { Game } from "../modules/game-app/game/Game";
 import { GameState, Player } from "./schema/GameState";
-import AllData from '../modules/game-app/game/data'
+import AllData from '../modules/game-app/game/data';
+
+
 export class GameRoom extends Room<GameState> {
   history: any;
   winner: any;
@@ -15,11 +17,11 @@ export class GameRoom extends Room<GameState> {
 
 
     this.onMessage('askHistory', (client, message) => {
-      client.send('sendHistory', { history: this.history, winner: this.winner });
+      client.send('sendHistory', { history: this.history, winner: this.winner, players: this.state.players, myTeam: this.state.players.get(client.sessionId).team, myAnimal: this.state.players.get(client.sessionId).animal });
     });
 
     this.onMessage('askData', (client, message) => {
-      client.send('sendData', { data: AllData });
+      client.send('sendData', { data: AllData, myAnimal: this.state.players.get(client.sessionId).animal });
     });
 
     this.onMessage('confirmSelection', (client, message) => {
@@ -29,11 +31,12 @@ export class GameRoom extends Room<GameState> {
         if (value.setupReady) {
           isReady++;
         }
+
       });
       if (isReady === 1) {
-        this.teamOne = { player: "P1", id: client.sessionId, squad: message.squad };
+        this.teamOne = { player: this.state.players.get(client.sessionId).team, id: client.sessionId, squad: message.squad };
       } else {
-        this.teamTwo = { player: "P2", id: client.sessionId, squad: message.squad };
+        this.teamTwo = { player: this.state.players.get(client.sessionId).team, id: client.sessionId, squad: message.squad };
       }
       console.log({ isReady })
       if (isReady === 2) {
@@ -75,9 +78,18 @@ export class GameRoom extends Room<GameState> {
     this.state.players.get(client.sessionId).name = options.name;
     this.state.players.get(client.sessionId).animal = options.animal;
 
+    this.state.players.get(client.sessionId).team = "P1";
+
+
+
     if (this.hasReachedMaxClients()) {
+      this.state.players.get(client.sessionId).team = "P2";
+
       console.log("REALLY START");
-      this.broadcast("reallyStartSetup")
+      /* this.state.players.forEach((value, key) => {
+        
+      }); */
+      this.broadcast("reallyStartSetup");
     }
   }
 

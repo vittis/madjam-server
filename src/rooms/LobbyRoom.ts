@@ -2,7 +2,7 @@ import { Room, Client } from "colyseus";
 import { Player } from "./schema/GameState";
 import { LobbyState } from "./schema/LobbyState";
 
-const ANIMALS = ["FROG", "RAT", "BAT", "BIRD", "CRAB", "LIZARD"]
+const ANIMALS = ["frog", "rat", "octopus"]
 
 export class LobbyRoom extends Room<LobbyState> {
   onCreate(options: any) {

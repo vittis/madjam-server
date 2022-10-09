@@ -7,6 +7,7 @@ export class Player extends Schema {
   @type("boolean") isMatchmaking: boolean = false;
 
   @type("boolean") setupReady: boolean = false;
+  @type("string") team: string;
 }
 
 export class GameState extends Schema {
