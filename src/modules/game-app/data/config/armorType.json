@@ -1,0 +1,23 @@
+{
+    "light": {
+        "min": 0,
+        "max": 5,
+        "bonuses": {
+            "quickness": 30
+        }
+    },
+    "medium": {
+        "min": 5,
+        "max": 12,
+        "bonuses": {
+            "quickness": 0
+        }
+    },
+    "heavy": {
+        "min": 12,
+        "max": 1000,
+        "bonuses": {
+            "quickness": -30
+        }
+    }
+}

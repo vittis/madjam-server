@@ -1,0 +1,17 @@
+{
+    "name": "Dagger",
+    "damage": {
+        "min": 5,
+        "max": 10
+    },
+    "atkRange": 1,
+    "weight": 0.5,
+    "quickness": 35,
+    "slot": [
+        "MAIN_HAND"
+    ],
+    "penetration": 10,
+    "armorShred": 0,
+    "strScale": 0,
+    "dexScale": 3
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Greataxe",
+  "damage": {
+    "min": 35,
+    "max": 60
+  },
+  "atkRange": 1,
+  "weight": 5,
+  "quickness": -30,
+  "slot": [
+    "TWO_HANDED"
+  ],
+  "penetration": 20,
+  "armorShred": 10,
+  "strScale": 5,
+  "dexScale": 0
+}

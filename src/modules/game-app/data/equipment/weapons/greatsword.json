@@ -1,0 +1,17 @@
+{
+    "name": "Greatsword",
+    "damage": {
+        "min": 25,
+        "max": 60
+    },
+    "atkRange": 1,
+    "weight": 4,
+    "quickness": -10,
+    "slot": [
+        "TWO_HANDED"
+    ],
+    "penetration": 30,
+    "armorShred": 0,
+    "strScale": 2,
+    "dexScale": 0.5
+}

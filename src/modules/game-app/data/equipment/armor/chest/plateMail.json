@@ -1,0 +1,9 @@
+{
+    "name": "Plate Mail",
+    "armorHp": 200,
+    "weight": 10,
+    "quickness": 0,
+    "slot": "CHEST",
+    "str": 0,
+    "dex": -3
+}

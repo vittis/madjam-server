@@ -1,0 +1,9 @@
+{
+    "name": "Leather Hat",
+    "armorHp": 25,
+    "weight": 1.2,
+    "quickness": 0,
+    "slot": "HEAD",
+    "str": 0,
+    "dex": 0
+}
