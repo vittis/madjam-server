@@ -1,0 +1,18 @@
+{
+    "name": "Machado Quasar",
+    "damage": {
+        "min": 20,
+        "max": 40
+    },
+    "atkRange": 1,
+    "weight": 3,
+    "quickness": -15,
+    "slot": [
+        "TWO_HANDED"
+    ],
+    "penetration": 20,
+    "armorShred": 10,
+    "strScale": 3,
+    "dexScale": 0,
+    "price": 300
+}

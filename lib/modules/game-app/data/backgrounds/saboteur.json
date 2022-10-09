@@ -1,0 +1,8 @@
+{
+    "name": "Sabotador",
+    "str": 1,
+    "dex": 5,
+    "hp": 120,
+    "quickness": 25,
+    "price": 250
+}
