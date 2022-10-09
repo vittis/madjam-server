@@ -2,17 +2,15 @@
   "name": "Conquistadora",
   "damage": {
     "min": 25,
-    "max": 60
+    "max": 50
   },
   "atkRange": 1,
   "weight": 4,
-  "quickness": -10,
-  "slot": [
-    "TWO_HANDED"
-  ],
-  "penetration": 30,
+  "quickness": -15,
+  "slot": ["TWO_HANDED"],
+  "penetration": 20,
   "armorShred": 0,
   "strScale": 2,
   "dexScale": 0.5,
-  "price": 500
+  "price": 600
 }
