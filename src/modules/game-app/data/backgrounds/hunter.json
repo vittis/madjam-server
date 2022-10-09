@@ -1,7 +1,7 @@
 {
-    "name": "Hunter",
-    "str": 2,
-    "dex": 6,
-    "hp": 130,
-    "quickness": 20
+  "name": "Caçador de Recompensas",
+  "str": 2,
+  "dex": 6,
+  "hp": 130,
+  "quickness": 20
 }

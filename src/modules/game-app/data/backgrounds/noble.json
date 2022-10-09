@@ -1,7 +1,7 @@
 {
-    "name": "Noble",
-    "str": 2,
-    "dex": 1,
-    "hp": 200,
-    "quickness": 0
+  "name": "Especialista",
+  "str": 2,
+  "dex": 1,
+  "hp": 200,
+  "quickness": 0
 }

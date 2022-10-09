@@ -40,7 +40,7 @@ export class Game {
       equipment: {
         mainHandWeapon: Weapons.Longbow as WeaponData,
         head: Heads.ClothHat as ArmorData,
-        chest: Chests.ClothRobe as ArmorData,
+        chest: Chests.BasicArmor as ArmorData,
       },
       playstyle: PLAYSTYLE.PASSIVE,
     });

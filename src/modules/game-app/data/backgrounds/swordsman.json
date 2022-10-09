@@ -1,7 +1,7 @@
 {
-    "name": "Swordsman",
-    "str": 4,
-    "dex": 3,
-    "hp": 200,
-    "quickness": 10
+  "name": "Soldado",
+  "str": 4,
+  "dex": 3,
+  "hp": 200,
+  "quickness": 10
 }
