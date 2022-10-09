@@ -1,7 +1,7 @@
 import { Room, Client } from "colyseus";
 import { Game } from "../modules/game-app/game/Game";
 import { GameState, Player } from "./schema/GameState";
-
+import AllData from '../modules/game-app/game/data'
 export class GameRoom extends Room<GameState> {
   history: any;
 
@@ -9,19 +9,18 @@ export class GameRoom extends Room<GameState> {
     this.maxClients = 2;
     this.setState(new GameState());
 
-    const game = new Game();
+    /* const game = new Game();
     game.startGame();
-    this.history = game.history;
+    this.history = game.history; */
 
     this.onMessage('askHistory', (client, message) => {
       client.send('sendHistory', { history: this.history });
     });
 
-
-    this.onMessage('teste', (client, message) => {
-      console.log('TESTE CHEGO');
-      client.send("peidaNaRola");
+    this.onMessage('askData', (client, message) => {
+      client.send('sendData', { data: AllData });
     });
+
   }
 
   onJoin(client: Client, options: any) {
@@ -32,7 +31,7 @@ export class GameRoom extends Room<GameState> {
 
     if (this.hasReachedMaxClients()) {
       console.log("REALLY START");
-      this.broadcast("reallyStartGame")
+      this.broadcast("reallyStartSetup")
     }
   }
 

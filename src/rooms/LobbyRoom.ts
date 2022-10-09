@@ -44,7 +44,7 @@ export class LobbyRoom extends Room<LobbyState> {
           console.log('sending');
           const player = this.state.players.get(key);
           player.isMatchmaking = false;
-          this.clients.find(c => c.sessionId === key).send('onStartGame', { name: player.name, animal: player.animal });
+          this.clients.find(c => c.sessionId === key).send('onStartSetup', { name: player.name, animal: player.animal });
         }
       });
     })
